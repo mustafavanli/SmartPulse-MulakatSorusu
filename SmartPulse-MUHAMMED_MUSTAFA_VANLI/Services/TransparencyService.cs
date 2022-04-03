@@ -19,7 +19,7 @@ namespace SmartPulse_MUHAMMED_MUSTAFA_VANLI.Services
 
         public async Task<List<IntraDayTradeDto>> GetTradeHistory(DateTime start,DateTime end)
         {
-            string url = $"https://seffaflik.epias.com.tr/transparency/service/market/intra-day-trade-history?endDate={start.ToString("yyyy-MM-dd")}&startDate={end.ToString("yyyy-MM-dd")}";
+            string url = $"https://seffaflik.epias.com.tr/transparency/service/market/intra-day-trade-history?endDate={end.ToString("yyyy-MM-dd")}&startDate={start.ToString("yyyy-MM-dd")}";
             
             var response = await client.GetAsync(url);
 
