@@ -1,0 +1,25 @@
+﻿@using SmartPulse_MUHAMMED_MUSTAFA_VANLI.Dtos
+
+@model List<IntraDayTradeDto>
+
+<br/><br/><br/><br/><br/><br/>
+<table class="table table-striped table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Tarih</th>
+        <th>Toplam İşlem Miktarı (MHW)</th>
+        <th>Toplam İşlem Tutarı (TL)</th>
+        <th>Ağırlık Ortalama Fiyat (TL/MHW)</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model){
+      <tr>
+        <td>@item.Date.ToString("MM/dd/yyyy HH:mm")</td>
+        <td>@item.TotalTransactionQuantity</td>
+        <td>@item.TotalTransactionAmount</td>
+        <td>@item.WeightAveragePrice</td>
+      </tr>
+    }
+    </tbody>
+</table>
